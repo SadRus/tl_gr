@@ -21,7 +21,11 @@ class Weather(models.Model):
         null=True,
     )
     request_timestamp = models.IntegerField(
+        'Временная метка',
         default=0,
         blank=True,
         null=True,
     )
+
+    def __str__(self):
+        return self.city
