@@ -20,11 +20,9 @@ class Weather(models.Model):
         blank=True,
         null=True,
     )
-    request_timestamp = models.IntegerField(
+    request_timestamp = models.FloatField(
         'Временная метка',
-        default=0,
-        blank=True,
-        null=True,
+        default=0.0,
     )
 
     def __str__(self):
