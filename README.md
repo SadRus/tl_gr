@@ -15,7 +15,7 @@ API and telegram bot for fetching weather data from yandex weather api.
 
 1. Clone github repository:
 ```sh
-https://github.com/SadRus/tl_gr.git
+git clone https://github.com/SadRus/tl_gr.git
 ```
 
 2. Move to the project directory:
