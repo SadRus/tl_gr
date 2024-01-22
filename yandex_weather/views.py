@@ -8,11 +8,12 @@ from rest_framework.views import APIView
 
 from .models import Weather
 from .serializers import WeatherSerializer
+from django.conf import settings
 
 
 def fetch_yandex_api_weather(weather):
     url = 'https://api.weather.yandex.ru/v2/forecast'
-    yandex_token = 'ede1295d-c090-48ab-b6ee-788efd91064c'
+    yandex_token = settings.YANDEX_WEATHER_API_TOKEN
 
     headers = {'X-Yandex-API-Key': yandex_token}
     params = {
@@ -45,11 +46,8 @@ class WeatherAPIView(APIView):
 
         if timestamp_now > timestamp_expired_at:
             weather_data = fetch_yandex_api_weather(weather)
-            weather.temperature = weather_data['temperature']
-            weather.pressure = weather_data['pressure']
-            weather.wind_speed = weather_data['wind_speed']
-            weather.request_timestamp = weather_data['request_timestamp']
-            weather.save()
+            Weather.objects.filter(city=city).update(**weather_data)
+            weather.refresh_from_db()
 
         serializer_class = WeatherSerializer(weather)
         return Response(serializer_class.data)
