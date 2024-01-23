@@ -39,11 +39,11 @@ class WeatherAPIView(RetrieveAPIView):
 
     @method_decorator(cache_page(60 * settings.CACHE_TIMEOUT))
     def get(self, request):
-        city = request.query_params.get('city')
-        weather = get_object_or_404(Weather, city=city)
+        city_name = request.query_params.get('city')
+        weather = get_object_or_404(Weather, city=city_name)
 
         weather_data = fetch_yandex_api_weather(weather)
-        Weather.objects.filter(city=city).update(**weather_data)
+        Weather.objects.filter(city=city_name).update(**weather_data)
         weather.refresh_from_db()
 
         serializer_class = WeatherSerializer(weather)

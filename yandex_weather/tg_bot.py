@@ -48,10 +48,10 @@ def handle_weather(update: Update, context: CallbackContext):
 
 
 def handle_city(update: Update, context: CallbackContext):
-    city = update.message.text
+    city_name = update.message.text
     reply_markup = InlineKeyboardMarkup(get_weather_keyboard())
 
-    if not Weather.objects.filter(city=city).exists():
+    if not Weather.objects.filter(city=city_name).exists():
         update.message.reply_text(
             text='Такого города не существует или неправильный формат.\n'
                  'Попробуйте еще раз.',
