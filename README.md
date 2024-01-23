@@ -9,7 +9,7 @@
 
 ### Description 
 
-API and telegram bot for fetching weather data from yandex weather api.
+Django app with telegram bot for fetching weather data from yandex weather api.
 
 ### Installing
 
@@ -82,12 +82,21 @@ You needs to create .env file for the enviroment variables in main folder.
 
 ### Usage
 
-First, start django app from root directory:
+1. Start django app from root directory:
 ```sh
 python manage.py runserver
 ```
+2. Open one more console and activate virtual enviroment:
+- Windows: 
+```
+.\.venv\Scripts\activate
+```  
+- Linux: 
+```sh
+source .venv/bin/activate
+```
 
-Second, run telegram bot via django management command (while django app is running):
+3. Run telegram bot via django management command (while django app is running):
 ```sh
 python manage.py runbot
 ```
