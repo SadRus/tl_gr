@@ -2,7 +2,11 @@ from django.db import models
 
 
 class Weather(models.Model):
-    city = models.CharField('Город', max_length=100)
+    city = models.CharField(
+        'Город',
+        max_length=100,
+        unique=True
+    )
     latitude = models.FloatField('Широта')
     longitude = models.FloatField('Долгота')
     temperature = models.FloatField(
@@ -19,10 +23,6 @@ class Weather(models.Model):
         'Скорость ветра',
         blank=True,
         null=True,
-    )
-    request_timestamp = models.FloatField(
-        'Временная метка',
-        default=0.0,
     )
 
     def __str__(self):
