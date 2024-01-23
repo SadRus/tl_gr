@@ -6,6 +6,7 @@
 3. [Enviroment](#enviroment)
 4. [Usage](#usage)
 5. [API_Endpoint](#api_endpoint)
+6. [Tests](#tests)
 
 ### Description 
 
@@ -112,4 +113,11 @@ python manage.py createsuperuser
 Example:
 ```
 http://127.0.0.1:8000/api/weather?city=Калининград
+```
+
+### Tests
+
+For running tests use console command:
+```sh
+python manage.py test
 ```
