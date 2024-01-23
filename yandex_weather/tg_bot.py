@@ -61,7 +61,7 @@ def handle_city(update: Update, context: CallbackContext):
 
     url = 'http://127.0.0.1:8000/api/weather'
     params = {
-        'city': city,
+        'city': city_name,
     }
     response = requests.get(url, params=params)
     response_data = response.json()
