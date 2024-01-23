@@ -1,6 +1,3 @@
-parse_cities.py
-cities.txt
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

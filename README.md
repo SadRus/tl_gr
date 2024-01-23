@@ -49,6 +49,16 @@ sudo apt-get update
 sudo apt-get install redis
 ```  
 
+8. Create default database and apply migrations:
+```sh
+python manage.py migrate
+```
+
+9. Parse cities from data file and create raws in db:
+```sh
+python parse_cities.py
+```
+
 ### Enviroment
 
 You needs to create .env file for the enviroment variables in main folder.
@@ -65,12 +75,12 @@ You needs to create .env file for the enviroment variables in main folder.
 ### Usage
 
 First, start django app from root directory:
-```python
+```sh
 python manage.py runserver
 ```
 
 Second, run telegram bot via django management command (while django app is running):
-```python
+```sh
 python manage.py runbot
 ```
 
