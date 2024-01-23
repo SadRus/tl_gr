@@ -53,10 +53,11 @@ sudo apt-get install redis
 
 You needs to create .env file for the enviroment variables in main folder.
 
-- `TG_BOT_TOKEN` - needs register the bot in telegram via https://t.me/BotFather
-- `YANDEX_WEATHER_API_TOKEN` - token for fetching data from yandex api https://yandex.ru/dev/weather/  
 - `ALLOWED_HOSTS` - allowed hosts, while DEBUG=False
 - `DEBUG` - debug mode (set False)
+- `CACHE_TIMEOUT` - timeout(in minutes) for api requests
+- `TG_BOT_TOKEN` - needs register the bot in telegram via https://t.me/BotFather
+- `YANDEX_WEATHER_API_TOKEN` - token for fetching data from yandex api https://yandex.ru/dev/weather/  
 - `SECRET_KEY` - django secret key (e.g. "django-insecure-0if40nf4nf93n4")
 - `REDIS_HOST` - redis host's ip address (e.g. 'localhost')
 - `REDIS_PORT` - redis port (default: 6379)

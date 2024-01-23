@@ -37,7 +37,7 @@ def fetch_yandex_api_weather(weather):
 
 class WeatherAPIView(RetrieveAPIView):
 
-    @method_decorator(cache_page(settings.CACHE_TIMEOUT))
+    @method_decorator(cache_page(60 * settings.CACHE_TIMEOUT))
     def get(self, request):
         city = request.query_params.get('city')
         weather = get_object_or_404(Weather, city=city)

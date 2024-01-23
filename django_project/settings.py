@@ -17,7 +17,7 @@ from pathlib import Path
 env = Env()
 env.read_env()
 
-CACHE_TIMEOUT = env('CACHE_TIMEOUT')
+CACHE_TIMEOUT = env.int('CACHE_TIMEOUT')
 TG_BOT_TOKEN = env('TG_BOT_TOKEN')
 REDIS_HOST = env('REDIS_HOST')
 REDIS_PORT = env('REDIS_PORT')
