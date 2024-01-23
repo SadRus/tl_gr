@@ -2,7 +2,7 @@ import os
 import re
 
 import django
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "../django_project.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django_project.settings")
 django.setup()
 
 from yandex_weather.models import Weather
