@@ -35,8 +35,14 @@ python -m venv .venv
 ```
 
 5. Activate virtual enviroment:  
-- Windows: `.\.venv\Scripts\activate`  
-- Linux: `source .venv/bin/activate`
+- Windows: 
+```
+.\.venv\Scripts\activate
+```  
+- Linux: 
+```sh
+source .venv/bin/activate
+```
 
 6. Use `pip` (or `pip3`) for install requirements:
 ```sh
@@ -49,12 +55,14 @@ sudo apt-get update
 sudo apt-get install redis
 ```  
 
-8. Create default database and apply migrations:
+8. Create .env file with enviroment variables (section below)  
+
+9. Create default database and apply migrations:
 ```sh
 python manage.py migrate
 ```
 
-9. Parse cities from data file and create raws in db:
+10. Parse cities from data file and create raws in db:
 ```sh
 python parse_cities.py
 ```
