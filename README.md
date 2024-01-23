@@ -86,6 +86,7 @@ You needs to create .env file for the enviroment variables in main folder.
 ```sh
 python manage.py runserver
 ```
+
 2. Open one more console and activate virtual enviroment:
 - Windows: 
 ```
@@ -99,6 +100,11 @@ source .venv/bin/activate
 3. Run telegram bot via django management command (while django app is running):
 ```sh
 python manage.py runbot
+```
+
+4. Also, you can create the superuser for manually edit data from admin panel http://127.0.0.1:8000/admin/
+```sh
+python manage.py createsuperuser
 ```
 
 ### API_Endpoint
