@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
-from rest_framework.views import APIView
+from rest_framework.generics import RetrieveAPIView
 
 from .models import Weather
 from .serializers import WeatherSerializer
@@ -35,7 +35,7 @@ def fetch_yandex_api_weather(weather):
     }
 
 
-class WeatherAPIView(APIView):
+class WeatherAPIView(RetrieveAPIView):
     def get(self, request):
         city = request.query_params.get('city')
         weather = get_object_or_404(Weather, city=city)

@@ -59,7 +59,7 @@ def handle_city(update: Update, context: CallbackContext):
         )
         return 'HANDLE_WEATHER'
 
-    url = 'http://127.0.0.1:8000/weather'
+    url = 'http://127.0.0.1:8000/api/weather'
     params = {
         'city': city,
     }
@@ -67,9 +67,9 @@ def handle_city(update: Update, context: CallbackContext):
     response_data = response.json()
 
     update.message.reply_text(
-        text=f'Текущая температура: {response_data["temperature"]}°С\n'
-             f'Атмосферное давление: {response_data["pressure"]}мм рт.ст.\n'
-             f'Скорость ветра: {response_data["wind_speed"]}м/с',
+        text=f'Текущая температура🌡: {response_data["temperature"]}°С\n'
+             f'Атмосферное давление📏: {response_data["pressure"]}мм рт.ст.\n'
+             f'Скорость ветра💨: {response_data["wind_speed"]}м/с',
         reply_markup=reply_markup,
     )
     return 'HANDLE_WEATHER'
@@ -114,8 +114,8 @@ def get_database_connection():
 
     global _database
     if _database is None:
-        database_host = settings.DATABASE_HOST
-        database_port = settings.DATABASE_PORT
+        database_host = settings.REDIS_HOST
+        database_port = settings.REDIS_PORT
         _database = redis.Redis(host=database_host, port=database_port)
     return _database
 

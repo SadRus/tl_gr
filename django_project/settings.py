@@ -18,8 +18,8 @@ env = Env()
 env.read_env()
 
 TG_BOT_TOKEN = env('TG_BOT_TOKEN')
-DATABASE_HOST = env('DATABASE_HOST')
-DATABASE_PORT = env('DATABASE_PORT')
+REDIS_HOST = env('REDIS_HOST')
+REDIS_PORT = env('REDIS_PORT')
 YANDEX_WEATHER_API_TOKEN = env('YANDEX_WEATHER_API_TOKEN')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -35,7 +35,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', ['127.0.0.1', 'localhost'])
 
 
 # Application definition
@@ -134,5 +134,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-APPEND_SLASH = False

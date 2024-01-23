@@ -55,10 +55,11 @@ You needs to create .env file for the enviroment variables in main folder.
 
 - `TG_BOT_TOKEN` - needs register the bot in telegram via https://t.me/BotFather
 - `YANDEX_WEATHER_API_TOKEN` - token for fetching data from yandex api https://yandex.ru/dev/weather/  
+- `ALLOWED_HOSTS` - allowed hosts, while DEBUG=False
 - `DEBUG` - debug mode (set False)
 - `SECRET_KEY` - django secret key (e.g. "django-insecure-0if40nf4nf93n4")
-- `DATABASE_HOST` - redis host's ip address (e.g. 'localhost')
-- `DATABASE_PORT` - redis port (default: 6379)
+- `REDIS_HOST` - redis host's ip address (e.g. 'localhost')
+- `REDIS_PORT` - redis port (default: 6379)
 
 ### Usage
 
@@ -67,13 +68,14 @@ First, start django app from root directory:
 python manage.py runserver
 ```
 
-Second, run telegram bot via django management command:
+Second, run telegram bot via django management command (while django app is running):
 ```python
 python manage.py runbot
 ```
 
 ### API_Endpoint
 
+Example:
 ```
-http://127.0.0.1:8000/weather?city=<city_name>
+http://127.0.0.1:8000/api/weather?city=Калининград
 ```

@@ -21,5 +21,5 @@ from yandex_weather.views import WeatherAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('weather', WeatherAPIView.as_view()),
+    path('api/weather/', WeatherAPIView.as_view()),
 ]
